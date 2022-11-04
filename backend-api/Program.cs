@@ -29,13 +29,28 @@ builder.Services.AddAuthentication("Bearer")
 
 builder.Services.AddAuthorization();
 
+
+//builder.Services.AddCors(options => {
+//    options.AddPolicy("CorsPolicy", builder => {
+//        builder
+//            .AllowAnyOrigin()
+//            .AllowAnyMethod()
+//            .AllowAnyHeader()
+//             .WithHeaders("authorization", "accept", "content-type", "origin");
+//    });
+//});
+
 var app = builder.Build();
+
+// app.UseCors("CorsPolicy");
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment()) {
     app.UseSwagger();
     app.UseSwaggerUI();
 }
+
+
 
 app.UseHttpsRedirection();
 

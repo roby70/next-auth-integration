@@ -7,7 +7,8 @@
   },
   "homepage": "https://next-auth-example.vercel.app",
   "scripts": {
-    "dev": "next",
+    "dev": "next", 
+    "devX": "set NODE_OPTIONS='--NODE_TLS_REJECT_UNAUTHORIZED='0' && next dev", 
     "build": "next build",
     "start": "next start"
   },
